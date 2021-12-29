@@ -1,10 +1,14 @@
 # Variables - SERVER_UPDATE_ENABLE
 
 # Name
-Server Update
+Server-Updater ENABLE
 
 # Description
 enable updating the server jar
+
+Valid Values:
+true
+false
 
 # Enviroment Variable
 SERVER_UPDATE_ENABLE
