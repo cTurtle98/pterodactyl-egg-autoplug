@@ -1,24 +1,42 @@
 # Variables - PLUGIN_UPDATE_PROFILE
 
-# Name
-Plugin-Updater PROFILE
+## Name
 
-# Description
+```txt
+Plugin-Updater PROFILE
+```
+
+## Description
+
+```txt
 how do you want to update your plugins
 
 Valid Values:
 AUTOMATIC
 MANUAL
 NOTIFY
+```
 
-# Enviroment Variable
+## Enviroment Variable
+
+```txt
 PLUGIN_UPDATE_PROFILE
+```
 
-# Default Value
+## Default Value
+
+```txt
 AUTOMATIC
+```
 
-# Permissions
+## Permissions
 
+```txt
 
-# Input Rules
+```
+
+## Input Rules
+
+```txt
 required|string|in:AUTOMATIC,MANUAL,NOTIFY
+```
