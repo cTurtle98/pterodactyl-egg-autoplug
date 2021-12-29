@@ -6,6 +6,10 @@ Plugin-Updater ENABLE
 # Description
 enable updating the plugin jars
 
+Valid Values:
+true
+false
+
 # Enviroment Variable
 PLUGIN_UPDATE_ENABLE
 
