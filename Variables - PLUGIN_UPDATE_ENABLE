@@ -1,0 +1,18 @@
+# Variables - PLUGIN_UPDATE_ENABLE
+
+# Name
+Plugin Update
+
+# Description
+enable updating the plugin jars
+
+# Enviroment Variable
+PLUGIN_UPDATE_ENABLE
+
+# Default Value
+true
+
+# Permissions
+
+# Input Rules
+required|string|in:true,false
