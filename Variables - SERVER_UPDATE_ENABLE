@@ -1,0 +1,18 @@
+# Variables - SERVER_UPDATE_ENABLE
+
+# Name
+Server Update
+
+# Description
+enable updating the server jar
+
+# Enviroment Variable
+SERVER_UPDATE_ENABLE
+
+# Default Value
+true
+
+# Permissions
+
+# Input Rules
+required|string|in:true,false
