@@ -4,21 +4,21 @@
         "version": "PTDL_v1",
         "update_url": null
     },
-    "exported_at": "2021-12-28T22:49:48-08:00",
+    "exported_at": "2021-12-28T23:23:32-08:00",
     "name": "AutoPlug",
     "author": "pterodactyl@cturtle98.com",
     "description": "Automatic Plugin\/Server\/Java\/Self Updater and Server Manager",
     "features": null,
     "images": [
-        "ghcr.io\/pterodactyl\/yolks:java_8",
-        "ghcr.io\/pterodactyl\/yolks:java_11",
+        "ghcr.io\/pterodactyl\/yolks:java_17",
         "ghcr.io\/pterodactyl\/yolks:java_16",
-        "ghcr.io\/pterodactyl\/yolks:java_17"
+        "ghcr.io\/pterodactyl\/yolks:java_11",
+        "ghcr.io\/pterodactyl\/yolks:java_8"
     ],
     "file_denylist": [],
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
     "config": {
-        "files": "{\r\n  \"autoplug\/updater-config.yml\": {\r\n    \"parser\": \"yaml\",\r\n    \"find\": {\r\n      \"updater-config.java-updater.enabled\": \"false\",\r\n      \"updater-config.java-updater.profile\": \"AUTOMATIC\",\r\n      \"updater-config.java-updater.version\": \"17\",\r\n      \"updater-config.server-updater.enabled\": \"{{server.build.env.SERVER_UPDATE_ENABLE}}\",\r\n      \"updater-config.server-updater.profile\": \"{{server.build.env.SERVER_UPDATE_PROFILE}}\",\r\n      \"updater-config.server-updater.software\": \"{{server.build.env.SERVER_TYPE}}\",\r\n      \"updater-config.server-updater.version\": \"{{server.build.env.SERVER_VERSION}}\",\r\n      \"updater-config.plugins-updater.enable\": \"{{server.build.env.PLUGIN_UPDATE_ENABLE}}\",\r\n      \"updater-config.plugins-updater.profile\": \"{{server.build.env.PLUGIN_UPDATE_PROFILE}}\"\r\n    }\r\n  },\r\n  \"server.properties\": {\r\n      \"parser\": \"properties\",\r\n      \"find\": {\r\n          \"server-ip\": \"0.0.0.0\",\r\n          \"server-port\": \"{{server.build.default.port}}\"\r\n      }\r\n  }\r\n}",
+        "files": "{\r\n    \"autoplug\/updater-config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"updater-config.java-updater.enable\": \"false\",\r\n            \"updater-config.java-updater.profile\": \"AUTOMATIC\",\r\n            \"updater-config.java-updater.version\": \"17\",\r\n            \"updater-config.server-updater.enable\": \"{{server.build.env.SERVER_UPDATE_ENABLE}}\",\r\n            \"updater-config.server-updater.profile\": \"{{server.build.env.SERVER_UPDATE_PROFILE}}\",\r\n            \"updater-config.server-updater.software\": \"{{server.build.env.SERVER_TYPE}}\",\r\n            \"updater-config.server-updater.version\": \"{{server.build.env.SERVER_VERSION}}\",\r\n            \"updater-config.plugins-updater.enable\": \"{{server.build.env.PLUGIN_UPDATE_ENABLE}}\",\r\n            \"updater-config.plugins-updater.profile\": \"{{server.build.env.PLUGIN_UPDATE_PROFILE}}\"\r\n        }\r\n    },\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
         "logs": "{}",
         "stop": ".stop both"

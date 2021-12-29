@@ -15,10 +15,10 @@ Automatic Plugin/Server/Java/Self Updater and Server Manager
 ## Docker Images
 
 ```txt
-ghcr.io/pterodactyl/yolks:java_8
-ghcr.io/pterodactyl/yolks:java_11
-ghcr.io/pterodactyl/yolks:java_16
 ghcr.io/pterodactyl/yolks:java_17
+ghcr.io/pterodactyl/yolks:java_16
+ghcr.io/pterodactyl/yolks:java_11
+ghcr.io/pterodactyl/yolks:java_8
 ```
 
 ## Startup Command
