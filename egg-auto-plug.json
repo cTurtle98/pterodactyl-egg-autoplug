@@ -1,0 +1,98 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-12-28T22:49:48-08:00",
+    "name": "AutoPlug",
+    "author": "pterodactyl@cturtle98.com",
+    "description": "Automatic Plugin\/Server\/Java\/Self Updater and Server Manager",
+    "features": null,
+    "images": [
+        "ghcr.io\/pterodactyl\/yolks:java_8",
+        "ghcr.io\/pterodactyl\/yolks:java_11",
+        "ghcr.io\/pterodactyl\/yolks:java_16",
+        "ghcr.io\/pterodactyl\/yolks:java_17"
+    ],
+    "file_denylist": [],
+    "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+    "config": {
+        "files": "{\r\n  \"autoplug\/updater-config.yml\": {\r\n    \"parser\": \"yaml\",\r\n    \"find\": {\r\n      \"updater-config.java-updater.enabled\": \"false\",\r\n      \"updater-config.java-updater.profile\": \"AUTOMATIC\",\r\n      \"updater-config.java-updater.version\": \"17\",\r\n      \"updater-config.server-updater.enabled\": \"{{server.build.env.SERVER_UPDATE_ENABLE}}\",\r\n      \"updater-config.server-updater.profile\": \"{{server.build.env.SERVER_UPDATE_PROFILE}}\",\r\n      \"updater-config.server-updater.software\": \"{{server.build.env.SERVER_TYPE}}\",\r\n      \"updater-config.server-updater.version\": \"{{server.build.env.SERVER_VERSION}}\",\r\n      \"updater-config.plugins-updater.enable\": \"{{server.build.env.PLUGIN_UPDATE_ENABLE}}\",\r\n      \"updater-config.plugins-updater.profile\": \"{{server.build.env.PLUGIN_UPDATE_PROFILE}}\"\r\n    }\r\n  },\r\n  \"server.properties\": {\r\n      \"parser\": \"properties\",\r\n      \"find\": {\r\n          \"server-ip\": \"0.0.0.0\",\r\n          \"server-port\": \"{{server.build.default.port}}\"\r\n      }\r\n  }\r\n}",
+        "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
+        "logs": "{}",
+        "stop": ".stop both"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n#\r\n# AutoPlug Pterodactyl Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\necho \"### enter the server directory used by pterodactyl\"\r\ncd \/mnt\/server\r\n\r\necho \"#### update apt cache\"\r\napt update && apt upgrade -y && apt install -y curl\r\n\r\necho \"#### download autoplug jar\"\r\ncurl -o $SERVER_JARFILE https:\/\/raw.githubusercontent.com\/Osiris-Team\/AutoPlug-Releases\/master\/stable-builds\/AutoPlug-Client.jar\r\n\r\necho \"#### SERVER INSTALL COMPLETE\"",
+            "container": "ubuntu:20.04",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server-Updater ENABLE",
+            "description": "enable updating the server jar\r\n\r\nValid Values:\r\ntrue\r\nfalse",
+            "env_variable": "SERVER_UPDATE_ENABLE",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string|in:true,false"
+        },
+        {
+            "name": "Plugin-Updater ENABLE",
+            "description": "enable updating the plugin jars\r\n\r\nValid Values:\r\ntrue\r\nfalse",
+            "env_variable": "PLUGIN_UPDATE_ENABLE",
+            "default_value": "true",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string|in:true,false"
+        },
+        {
+            "name": "Server-Updater PROFILE",
+            "description": "how do you want server updates applied\r\n\r\nValid Values:\r\nAUTOMATIC\r\nMANUAL\r\nNOTIFY",
+            "env_variable": "SERVER_UPDATE_PROFILE",
+            "default_value": "AUTOMATIC",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:AUTOMATIC,MANUAL,NOTIFY"
+        },
+        {
+            "name": "Plugin-Updater PROFILE",
+            "description": "how do you want to update your plugins\r\n\r\nValid Values:\r\nAUTOMATIC\r\nMANUAL\r\nNOTIFY",
+            "env_variable": "PLUGIN_UPDATE_PROFILE",
+            "default_value": "AUTOMATIC",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:AUTOMATIC,MANUAL,NOTIFY"
+        },
+        {
+            "name": "Server Type",
+            "description": "which Minecraft server software do you want to use?\r\n\r\nValid Values:\r\npaper\r\nwaterfall\r\ntravertine\r\nvelocity\r\npurpur",
+            "env_variable": "SERVER_TYPE",
+            "default_value": "paper",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:paper,waterfall,travertine,velocity,purpur"
+        },
+        {
+            "name": "Server Version",
+            "description": "version of minecraft to use",
+            "env_variable": "SERVER_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        },
+        {
+            "name": "Server Jar File",
+            "description": "The name of the server jarfile to run the server with.",
+            "env_variable": "SERVER_JARFILE",
+            "default_value": "AutoPlug-Client.jar",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|string|max:20"
+        }
+    ]
+}
