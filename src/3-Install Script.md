@@ -1,5 +1,9 @@
 # Install Script
 
+### autoplug jar file github page
+
+https://github.com/Osiris-Team/AutoPlug-Releases/blob/master/stable-builds/AutoPlug-Client.jar
+
 ```ash
 
 ```
