@@ -13,18 +13,10 @@ which Minecraft server software do you want to use?
 
 Valid Values:
 paper
-purpur
 waterfall
-velocity
 travertine
-
-ADVANCED:
-you can set an alternative server software to use by manually editing the config file with an alternatives section EX:
-alternatives: 
-  github: 
-    repo-name: Anuken/Mindustry
-    asset-name: server-release
-and then this option will be ignored
+velocity
+purpur
 ```
 
 ## Enviroment Variable
@@ -42,11 +34,11 @@ paper
 ## Permissions
 
 ```txt
-
+Users Can View, Users Can Edit
 ```
 
 ## Input Rules
 
 ```txt
-required|string|in:paper,purpur,waterfall,velocity,travertine
+required|string|in:paper,waterfall,travertine,velocity,purpur
 ```

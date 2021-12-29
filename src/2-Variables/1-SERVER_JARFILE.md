@@ -1,33 +1,33 @@
-# Variables - SERVER_VERSION
+# Variables - SERVER_JARFILE
 
 ## Name
 
 ```txt
-Server Version
+Server Jar File
 ```
 
 ## Description
 
 ```txt
-version of minecraft to use
+The name of the server jarfile to run the server with.
 ```
 
 ## Enviroment Variable
 
 ```txt
-SERVER_VERSION
+SERVER_JARFILE
 ```
 
 ## Default Value
 
 ```txt
-latest
+AutoPlug-Client.jar
 ```
 
 ## Permissions
 
 ```txt
-Users Can View, Users Can Edit
+Users Can View
 ```
 
 ## Input Rules

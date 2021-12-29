@@ -1,21 +1,25 @@
 # Install Script
 
-### autoplug jar file github page
+```bash
+#!/bin/bash
+#
+# AutoPlug Pterodactyl Installation Script
+#
+# Server Files: /mnt/server
 
-https://github.com/Osiris-Team/AutoPlug-Releases/blob/master/stable-builds/AutoPlug-Client.jar
-
-```ash
+apt update
+apt install -y curl
 
 ```
 
 ## Script Container
 
 ```txt
-ghcr.io/pterodactyl/installers:alpine
+ubuntu:20.04
 ```
 
 ## Script Entrypoint Command
 
-```txt
-ash
+```bash
+bash
 ```

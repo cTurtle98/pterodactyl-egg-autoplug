@@ -32,7 +32,7 @@ AUTOMATIC
 ## Permissions
 
 ```txt
-
+Users Can View, Users Can Edit
 ```
 
 ## Input Rules

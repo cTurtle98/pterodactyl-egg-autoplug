@@ -31,7 +31,7 @@ true
 ## Permissions
 
 ```txt
-
+Users Can View
 ```
 
 ## Input Rules
