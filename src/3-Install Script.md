@@ -7,8 +7,16 @@
 #
 # Server Files: /mnt/server
 
-apt update
-apt install -y curl
+echo "### enter the server directory used by pterodactyl"
+cd /mnt/server
+
+echo "#### update apt cache"
+apt update && apt upgrade -y && apt install -y curl
+
+echo "#### download autoplug jar"
+curl -o $SERVER_JARFILE https://raw.githubusercontent.com/Osiris-Team/AutoPlug-Releases/master/stable-builds/AutoPlug-Client.jar
+
+echo "#### SERVER INSTALL COMPLETE"
 
 ```
 
