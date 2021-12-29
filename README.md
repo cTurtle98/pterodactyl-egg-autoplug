@@ -1,5 +1,5 @@
 # pterodactyl-egg-autoplug
 
-WORK IN PROGRESS
+USE AT YOUR OWN RISK
 
-each of the files reprosents a form field in the pterodactyl "new egg" page
+everything appears to be working for me but it has not een extensively tested yet
